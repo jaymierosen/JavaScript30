@@ -58,25 +58,7 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-    //listening when the key arrow is pressed down
-    //then, run this function
-    //gives us an event
-    window.addEventListener('keydown', function(e) {
-      // console.log(e.keyCode);
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      const key = document.querySelector(`div.key[data-key="${e.keyCode}"]`);
-      if(!audio) return; //if no data key, stop the function from running
-      audio.currentTime = 0; //makes the audio play from the beginning every time
-      audio.play();
-      key.classList.add('playing'); //same as $('div.key').addClass('playing');
-      
-      const keys= document.querySelectorAll('.key');
-      keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-      function removeTransition(e) {
-        if(e.propertyName !== 'transform') return; //skip it if it's transform
-        this.classList.remove('playing');
-      }
-    });
+
 </script>
 
 
